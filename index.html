@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+ <script src="https://kit.fontawesome.com/7c4af47b2d.js" crossorigin="anonymous"></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <link rel="stylesheet" href="src/style.css" />
+ <title>Weather App</title>
+</head>
+
+<body>
+ <div class="container">
+  <div class="weather-app-wrapper">
+   <div class="weather-app">
+    <div class="overview">
+     <h1 id="city">Lagos</h1>
+     <ul>
+      <li>Last updated:Thursday <span id="date">6th </span></li>
+      <li id="description">Mostly Cloudy</li>
+     </ul>
+    </div>
+    <div class="row">
+     <div class="col-6">
+      <div class="clearfix weather-temperature">
+       <img src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v3/Condition_Card/SunnyDayV3.svg"
+        alt="Clear" id="icon" class="float-left" />
+       <div class="float-left">
+        <strong id="temperature">29</strong><span class="units"> °C</span>
+       </div>
+      </div>
+     </div>
+     <div class="col-6">
+      <ul>
+       <li>Precipitation <span id="Precipitation"></span>2%</li>
+       <li>Humidity: <span id="humidity"></span>78%</li>
+       <li>Wind: <span id="wind"></span>5 m/h</li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="card-body 5-day">
+    <div class="row row-col-5 days">
+     <div class="col days">Tue</div>
+     <div class="col days">Wed</div>
+     <div class="col days">Thu</div>
+     <div class="col days">Fri</div>
+     <div class="col days">Sat</div>
+
+    </div>
+    <div class="row row-col-5 dates">
+     <div class="col dates">03/07</div>
+     <div class="col dates">03/08</div>
+     <div class="col dates">03/09</div>
+     <div class="col dates">03/10</div>
+     <div class="col dates">03/11</div>
+
+    </div>
+    <div class="row row-col-5 icons">
+     <div class="col icons">
+      <i class="fa-solid fa-cloud"></i>
+     </div>
+     <div class="col icons">
+      <i class="fa-solid fa-cloud-sun"></i>
+     </div>
+     <div class="col icons">
+      <i class="fa-solid fa-cloud-sun"></i>
+     </div>
+     <div class="col icons">
+      <i class="fa-solid fa-cloud"></i>
+     </div>
+     <div class="col icons">
+      <i class="fa-solid fa-cloud-sun"></i>
+     </div>
+    </div>
+    <div class="row row-col-5 temp">
+     <div class="col temp">33°C</div>
+     <div class="col temp">34°C</div>
+     <div class="col temp">33°C</div>
+     <div class="col temp">33°C</div>
+     <div class="col temp">33°C</div>
+
+    </div>
+   </div>
+  </div>
+
+  <small>
+   <a href="" target="_blank">Open-source code</a>
+   by Sofiat
+  </small>
+ </div>
+ </div>
+ <script src="src/app.js"></script>
+</body>
+
+</html>
