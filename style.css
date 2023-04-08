@@ -30,6 +30,7 @@ li{
  font-size: 18px;
  font-weight: 100;
  line-height: 15px;
+ text-transform: capitalize;
 }
 .overview{
  margin-bottom: 20px;
