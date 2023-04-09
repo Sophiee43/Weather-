@@ -18,16 +18,23 @@
   
   <div class="weather-app-wrapper">
    <div class="weather-app">
-    <form id="search-form">
-      <input id="city-input" type="text" class="search-bar" placeholder="Enter your city..." autofocus />
-      <button type="submit" class="btn btn-primary">Search</button>
-    <div class="overview">
+     <form id="search-form">
+    <div class="row">
+      <div class="col-9">
+      <input id="city-input" type="text" class="form-control" placeholder="Enter your city..." autofocus />
+      </div>
+      <div class="col=3">
+        <input type="submit"
+        value="search" 
+        class="btn btn-primary w-100">
+      </div>
+      </div>
      <h1 id="city">Lagos</h1>
      <ul>
       <li>Last updated:Thursday <span id="date">6th </span></li>
       <li id="description">Mostly Cloudy</li>
      </ul>
-    </div>
+    
     <div class="row">
      <div class="col-6">
       <div class="weather-temperature">
@@ -40,8 +47,8 @@
      </div>
      <div class="col-6">
       <ul>
-       <li>Humidity: <span id="humidity"></span>78%</li>
-       <li>Wind: <span id="wind"></span>5km/h</li>
+       <li>Humidity: <span id="humidity"></span>%</li>
+       <li>Wind: <span id="wind"></span>km/h</li>
       </ul>
      </div>
     </div>
@@ -90,13 +97,14 @@
     </div>
    </div>
   </div>
-</div>
+
   <small>
    <a href="https://github.com/Sophiee43/Weather-.git" target="_blank">Open-source code</a>
    by Sofiat
   </small>
  </div>
  </div>
+
  <script src="app.js"></script>
 </body>
 

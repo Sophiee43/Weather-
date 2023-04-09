@@ -43,11 +43,21 @@ function displayTemperature(response) {
  icon.setAttribute("src",` https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
  icon.setAttribute("alt",response.data.weather[0].description)
 }
-   let city = `Ikorodu`;
+function search(city) {
+  
+   
    let units = "metric";
   let apiKey = "2daf65f0cdaa917f11026e8a128ce271";
   let url = "https://api.openweathermap.org/data/2.5/weather?q=";
   let apiUrl = `${url}${city}&units=${units}&appid=${apiKey}`;
   
 axios.get(apiUrl).then(displayTemperature)
+}
+function searchCity(event) {
+  event.preventDefault();
+  let cities=document.querySelector("#city-input");
+search(cities.value)
+}
 
+let form=document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
