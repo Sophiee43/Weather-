@@ -42,6 +42,7 @@ function displayTemperature(response) {
  let icon=document.querySelector("#icon");
  icon.setAttribute("src",` https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
  icon.setAttribute("alt",response.data.weather[0].description)
+ celsiusTemp=response.data.main.temp;
 }
 function search(city) {
   
@@ -56,8 +57,33 @@ axios.get(apiUrl).then(displayTemperature)
 function searchCity(event) {
   event.preventDefault();
   let cities=document.querySelector("#city-input");
-search(cities.value)
+search(cities.value);
 }
 
 let form=document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement=document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp=(celsiusTemp*9/5)+32
+  temperatureElement.innerHTML=Math.round(fahrenheitTemp);
+}
+let celsiusTemp="null"
+
+let fahrenheitLink=document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature); 
+
+function displayCelsiusTemperature(event) {
+ event.preventDefault();
+ let temperatureElement=document.querySelector("#temperature");
+ celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  
+ temperatureElement.innerHTML=Math.round(celsiusTemp) 
+}
+
+let celsiusLink=document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click" , displayCelsiusTemperature)
