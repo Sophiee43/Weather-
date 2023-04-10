@@ -44,11 +44,29 @@ function displayTemperature(response) {
  icon.setAttribute("alt",response.data.weather[0].description)
  celsiusTemp=response.data.main.temp;
 }
+function displayForecast() {
+  let forecastElement=document.querySelector("#forecast");
+  let forecastHTML=`<div class="row">`;
+  let days=["Tue","Wed","Thu","Fri"];
+  days.forEach(function (day) {
+    forecastHTML=
+  forecastHTML + `
+  <div class="col-2">
+  <div class="weather-forecast -date">${day}</div>
+  <img src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v3/Condition_Card/SunnyDayV3.svg" alt=""width="56">
+  <div class="weather-forecast-temp"><span class="max-temp">20°</span>
+  <span class="min-temp">12°</span>
+  </div>
+  </div>
+  `
+  });
+  forecastHTML=forecastHTML +`</div>`;
+  forecastElement.innerHTML=forecastHTML;
+}
+displayForecast();
 function search(city) {
-  
-   
-   let units = "metric";
-  let apiKey = "2daf65f0cdaa917f11026e8a128ce271";
+let units = "metric";
+let apiKey = "2daf65f0cdaa917f11026e8a128ce271";
   let url = "https://api.openweathermap.org/data/2.5/weather?q=";
   let apiUrl = `${url}${city}&units=${units}&appid=${apiKey}`;
   
@@ -59,6 +77,8 @@ function searchCity(event) {
   let cities=document.querySelector("#city-input");
 search(cities.value);
 }
+
+
 
 let form=document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
@@ -72,7 +92,6 @@ function displayFahrenheitTemperature(event) {
   temperatureElement.innerHTML=Math.round(fahrenheitTemp);
 }
 let celsiusTemp="null"
-
 let fahrenheitLink=document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature); 
 
